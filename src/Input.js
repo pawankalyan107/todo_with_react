@@ -20,7 +20,7 @@ class Input extends React.Component {
       fetchJSON().then((res) => {
         res.map((ele) => {
           return this.setState({
-            ...this.setState,
+            ...this.state,
             todo: [...this.state.todo, ele.login],
           });
         });

@@ -1,18 +1,17 @@
 import React from "react";
 
-export default function Tasks(props) {
-  // console.log(props.text)
+const Tasks=(props)=> {
   const [checkIn, setCheckIn] = React.useState({
     checked: false,
   });
-  function Edit(e) {
+  const Edit=(e)=> {
     if (!e.target.previousElementSibling.contentEditable) {
       e.target.previousElementSibling.contentEditable = false;
     } else {
       e.target.previousElementSibling.contentEditable = true;
     }
   }
-  function Delete(e) {
+  const Delete=(e)=> {
     e.target.parentNode.remove();
   }
   let checkingState = checkIn.checked;
@@ -23,7 +22,7 @@ export default function Tasks(props) {
     });
     Check(e);
   };
-  function Check(e) {
+  const Check=(e) => {
     if (checkingState) {
       e.target.nextElementSibling.style.textDecoration = "none";
     } else {
@@ -57,3 +56,6 @@ export default function Tasks(props) {
     </>
   );
 }
+
+
+export default Tasks
